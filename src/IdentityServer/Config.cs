@@ -21,7 +21,8 @@ namespace IdentityServer
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "My API")
+                //new ApiResource("api1", "My API")
+                new ApiResource("api1", "My API") { Scopes = new List<Scope> { new Scope("scope1") } }
             };
         }
 
@@ -43,7 +44,8 @@ namespace IdentityServer
                     },
 
                     // scopes that client has access to
-                    AllowedScopes = { "api1" }
+                    //AllowedScopes = { "api1" }
+                    AllowedScopes = { "scope1" }
                 }
             };
         }
